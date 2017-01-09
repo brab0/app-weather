@@ -11,7 +11,7 @@
 - ./node_modules/http-server/bin/http-server
 
 ## Estrutura de Diretórios
-Devido a requisições a apis externas (https://darksky.net/dev/), optou-se por criar e separar uma camada de backend que servirá somente como proxy dessas requisições para que se evitem restriçes de CORS.
+Devido a requisições a apis externas (https://darksky.net/dev/), optou-se por criar e separar uma camada de backend que servirá somente como proxy dessas requisições para que se evitem restrições de acesso de CORS.
 ```html
 |- proxy
 |  |- controllers
