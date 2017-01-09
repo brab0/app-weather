@@ -11,6 +11,8 @@
 - ./node_modules/http-server/bin/http-server
 
 ## Estrutura de Diretórios
+```html
+<pre>
 |- proxy
 |  |- controllers
 |  |- routers
@@ -24,3 +26,5 @@
 |  |- assets
 |  |  |- bower_components
 |  |  |- css
+</pre>
+```
