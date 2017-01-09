@@ -1,11 +1,12 @@
 # app-weather
 ## Install
+- Abra o Terminal
 - sudo git clone https://github.com/brab0/app-weather.git
-- cd app-weather
-- cd proxy
+- cd path/to/app-weather/proxy
 - sudo npm install
 - node server
-- cd ../web
+- Abra outra janela de Terminal(ou use um gerenciador de abas ou processos. Ex: PM2)
+- cd path/to/app-weather/web
 - sudo bower install --allow-root
 - sudo npm install
 - ./node_modules/http-server/bin/http-server
