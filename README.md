@@ -9,7 +9,8 @@
 - cd path/to/app-weather/web
 - sudo bower install --allow-root
 - sudo npm install
-- ./node_modules/http-server/bin/http-server
+- ./node_modules/http-server/bin/http-server (ou somente http-server se já estiver instalado gloabalmente)
+- rodando em: http://localhost:8080
 
 ## Estrutura de Diretórios
 Devido a requisições a apis externas (https://darksky.net/dev/), optou-se por criar e separar uma camada de backend que servirá somente como proxy dessas requisições para que se evitem restrições de acesso de CORS.
