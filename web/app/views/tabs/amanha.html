@@ -1,0 +1,88 @@
+<!-- Tab de Previsão do dia de Amanhã -->
+
+<!-- start day-content-details -->
+<md-content class="day-content-details container">
+  <div layout="row" layout-xs="column">
+    <!-- start content-detail-left -->
+    <div flex class="content-detail-left">
+      <div class="content-datail-header" layout="row">
+        <div flex>
+          <h3 class="md-subhead" ng-bind="(weather.daily[1].time * 1000) | formatDateToExtenso : false"></h3>
+          <p class="summary" ng-bind="weather.daily[1].summary"></p>
+        </div>
+      </div>
+      <div class="content-datail-subheader" layout="row">
+        <div flex>
+          <i class="wi wi-forecast-io-{{ weather.daily[1].icon }} wi-dark-sky-{{ weather.daily[1].icon }}"></i>
+        </div>
+      </div>
+    </div>
+    <!-- end content-detail-left -->
+    <!-- start content-detail-right -->
+    <div flex class="content-detail-right">
+      <div class="item-detail-body">
+        <div>
+          <i class="wi wi-thermometer"></i> Temperatura
+        </div>
+        <div>
+          <i class="wi wi-direction-up"></i>
+          <span ng-bind="weather.daily[1].temperatureMax | formatTemperature : selectedMedida"></span>
+
+          <i class="wi wi-direction-down"></i>
+          <span ng-bind="weather.daily[1].temperatureMin | formatTemperature : selectedMedida"></span>
+        </div>
+        <br clear="both" />
+      </div>
+      <div class="item-detail-body">
+        <div>
+          <i class="wi wi-day-sunny"></i> Sol
+        </div>
+        <div>
+          <i class="wi wi-direction-up"></i>
+          <span ng-bind="weather.daily[1].sunriseTime * 1000 | date : 'HH:mm'"></span>
+
+          <i class="wi wi-direction-down"></i>
+          <span ng-bind="weather.daily[1].sunsetTime * 1000 | date : 'HH:mm'"></span>
+        </div>
+        <br clear="both" />
+      </div>
+      <div class="item-detail-body">
+        <div>
+          <i class="wi wi-humidity"></i> Humidade
+        </div>
+        <div>
+          <span ng-bind="weather.daily[1].humidity * 100"></span>%
+        </div>
+        <br clear="both" />
+      </div>
+      <div class="item-detail-body">
+        <div>
+          <i class="wi wi-strong-wind"></i> Vento
+        </div>
+        <div>
+          <span ng-bind="weather.daily[1].windSpeed"></span> km/h
+        </div>
+        <br clear="both" />
+      </div>
+    </div>
+    <!-- end content-detail-right -->
+  </div>
+</md-content>
+<!-- end day-content-details -->
+<!-- start day-content-hourly -->
+<md-content class="day-content-hourly container">
+  <div layout="row">
+    <div class="item-hourly" ng-repeat="hora in weather.hourly | hoursByDate : weather.daily[1].time">
+      <div>
+        <span ng-bind="hora.time * 1000 | date : 'HH'"></span>h
+      </div>
+      <div>
+        <i class="wi wi-forecast-io-{{ hora.icon }} wi-dark-sky-{{ hora.icon }}"></i>
+      </div>
+      <div>
+        <span ng-bind="hora.temperature | formatTemperature : selectedMedida"></span>
+      </div>
+    </div>
+  </div>
+</md-content>
+<!-- end day-content-hourly -->

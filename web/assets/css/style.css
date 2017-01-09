@@ -1,0 +1,229 @@
+/* Start Reset */
+
+html, body{
+	background: #fff;
+}
+
+h1,h2,h3,h4,h5{
+	color: #313131;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+ul li, a{
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+}
+
+.md-display-4{
+	margin: 0 15px 0 0;
+	font-size: 90px;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+md-content.md-default-theme, md-content{
+	color: rgba(0,0,0,0.87);
+	background-color: rgb(255, 255, 255);
+}
+
+/* End Reset */
+
+/* Start General Layout */
+
+section{
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container{
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+#load{
+	margin:40px auto
+}
+
+#unselected{
+  width: 760px;
+  margin: 40px auto;
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+}
+/* End General Layout */
+
+/* Start Main Search */
+
+md-input-container{
+	margin: 0;
+}
+
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+md-select-value{
+	padding: 6px 0 !important;
+	text-align: right;
+}
+
+.md-input{
+ 	padding: 20px !important;
+}
+
+.md-input, md-select-value{
+ 	outline: none !important;
+	border-color: transparent !important;
+}
+
+.md-input-focused .md-input{
+	outline: none !important;
+	border-color: transparent !important;
+	padding: 20px 20px 19px !important;
+}
+
+.pac-container {
+  margin-top: 2px !important;
+	margin-left: -2px !important;
+}
+
+#main-search md-whiteframe{
+	margin: 0;
+	background: #fff;
+}
+
+#main-search-wrap{
+	background: #4e98ce;
+}
+
+#main-search{
+    padding: 15px;
+}
+
+/* End Main Search */
+
+/* Start Tabs */
+
+md-tabs, md-tabs-wrapper, md-tab-data, md-tab{
+	background: white;
+}
+
+md-tabs-canvas{
+	background: #4e98ce;
+}
+
+md-pagination-wrapper{
+	display: flex;
+  width: 100% !important;
+  max-width: 760px;
+  left: 50%;
+  transform: translate(-50%,0) !important;
+}
+
+md-tab-item{
+	flex-grow: 1;
+	color: #fff !important;
+}
+
+.tab-content{
+	margin: 0;
+	padding: 25px;
+}
+
+/* End Tabs */
+
+/* Start Main Content */
+
+.day-content-datails{
+	padding: 20px 40px;
+}
+
+.day-content-details .content-detail-left .content-datail-header .summary{
+	margin-top: 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.md-subhead{
+	margin: 0;
+}
+
+.item-detail-body{
+	margin: 0 0 8px;
+	font-size: 15px;
+}
+
+.item-detail-body > div:nth-child(1){
+	font-weight: 500;
+	float: left;
+	text-transform: uppercase;
+}
+.item-detail-body > div:nth-child(2){
+	float: right;
+}
+
+.day-content-hourly{
+	margin-top:20px;
+	padding-top:20px;
+	border-top: 1px dashed #c9c9c9;
+}
+
+.item-hourly{
+	margin: 10px 25px;
+	text-align: center;
+	font-size:12px;
+}
+
+/* End Main Content */
+
+/* Start Icons */
+
+.wi{
+  color: #406c94;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+.wi-thermometer{
+	margin-left: 9px !important;
+	margin-right: 8px !important;
+}
+
+.wi-direction-up, .wi-day-sunny{
+	margin-left:3px !important;
+	margin-right:3px !important;
+}
+
+.wi-direction-down{
+	margin-right:3px !important;
+}
+
+.wi-strong-wind{
+	margin-left: 0px !important;
+	margin-right: 3px !important;
+}
+
+.item-hourly .wi{
+	font-size: 24px;
+	margin: 10px 0 5px;
+}
+
+.item-detail-body .wi{
+	font-size: 18px;
+	color: #999;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 6px;
+}
+.content-datail-subheader .wi{
+	font-size: 80px;
+}
+
+/* End Icons */

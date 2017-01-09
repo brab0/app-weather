@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+		<link rel="stylesheet" href="assets/bower_components/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="assets/bower_components/weather-icons/css/weather-icons.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="assets/bower_components/angular/angular.min.js"></script>
+		<script src="assets/bower_components/angular-animate/angular-animate.min.js"></script>
+		<script src="assets/bower_components/angular-aria/angular-aria.min.js"></script>
+		<script src="assets/bower_components/angular-messages/angular-messages.min.js"></script>
+		<script src="assets/bower_components/angular-material/angular-material.min.js"></script>
+	</head>
+	<body ng-app="AppWeather" ng-controller="MainCtrl">
+		<!-- start wrap -->
+		<div id="wrap" ng-cloak>
+			<!-- start main-search-wrap -->
+		  <section id="main-search-wrap">
+				<div id="main-search" ng-include="'app/views/main-search.html'" class="container"></div>
+			</section >
+			<!-- end main-search-wrap -->
+			<!-- start main-content-wrap -->
+			<section id="main-content-wrap">
+				<div id="main-content" ng-include="'app/views/main-content.html'" ng-show="!load && selectedPlace != ''">
+				</div>
+				<md-progress-circular md-diameter="96" id="load" ng-show="load"></md-progress-circular>
+				<h4 ng-show="selectedPlace == '' && !load" id="unselected">Nenhum local selecionado</h4>
+			</section>
+			<!-- end main-content-wrap -->
+		</div>
+		<!-- end wrap -->
+
+		<!-- App Config e Contants - AppWeather -->
+		<script src="app/app.js"></script>
+
+		<!-- App Factories -->
+		<script src="app/factories/factory.google-places.js"></script>
+
+		<!-- App Filters -->
+		<script src="app/filters/filter.dates.js"></script>
+		<script src="app/filters/filter.hours.js"></script>
+		<script src="app/filters/filter.temperature.js"></script>
+
+		<!-- App Controllers -->
+		<script src="app/controllers/ctrl.main.js"></script>
+	</body>
+</html>

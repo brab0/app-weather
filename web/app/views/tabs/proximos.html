@@ -1,0 +1,67 @@
+<!-- Tab com lista da previsão dos próximos dias -->
+
+<md-content class="container">
+  <md-list>
+    <!-- start md-list-item-text -->
+    <div class="md-list-item-text" layout="row" layout-align="center center">
+      <div flex="40"></div>
+      <div flex="15" flex-xs="20" class="md-title" style="text-align: center;font-size: 12px;text-transform: uppercase;">
+        <i class="wi wi-thermometer" style="margin-left:3px;margin-right:3px; font-size: 14px;"></i> Temp.
+      </div>
+      <div flex="15" hide-xs class="md-title" style="text-align: center;font-size: 12px;text-transform: uppercase;">
+        <i class="wi wi-day-sunny" style="margin-left:3px;margin-right:3px; font-size: 14px;"></i> Sol
+      </div>
+      <div flex="15" flex-xs="20" class="md-title" style="text-align: center;font-size: 12px;text-transform: uppercase;">
+        <i class="wi wi-humidity" style="font-size: 14px;"></i> Humid.
+      </div>
+      <div flex="15" flex-xs="20" class="md-title" style="text-align: center;font-size: 12px;text-transform: uppercase;">
+        <i class="wi wi-strong-wind" style="font-size: 14px;margin-left: 0px; margin-right: 3px;"></i> Vento
+      </div>
+    </div>
+    <!-- end md-list-item-text -->
+    <!-- start md-list-item -->
+    <md-list-item class="md-3-line" ng-repeat="item in weather.daily" ng-if="$index > 1">
+      <div class="md-list-item-text" layout="row" layout-align="center center">
+        <div flex="40">
+          <div layout="row" layout-xs="column">
+            <div flex="20">
+              <i class="wi wi-forecast-io-{{ item.icon }} wi-dark-sky-{{ item.icon }}" style="font-size: 35px"></i>
+            </div>
+            <div flex="80">
+              <h5 ng-bind="item.time * 1000 | formatDateToExtenso : false" style="margin: 0; font-size: 14px"></h5>
+              <h4 style="display: inline-block; white-space: normal;">{{item.summary}}</h4>
+            </div>
+          </div>
+        </div>
+        <div flex="15" flex-xs="20" style="text-align: center">
+          <h4>
+            <i class="wi wi-direction-up" style="font-size: 20px;vertical-align: middle;"></i>
+            <span ng-bind="item.temperatureMax | formatTemperature : selectedMedida"></span>
+          </h4>
+          <h4>
+            <i class="wi wi-direction-down" style="font-size: 20px;vertical-align: middle;"></i>
+            <span ng-bind="item.temperatureMin | formatTemperature : selectedMedida"></span>
+          </h4>
+        </div>
+        <div flex="15" style="text-align: center" hide-xs>
+          <h4>
+            <i class="wi wi-direction-up" style="font-size: 20px;vertical-align: middle;"></i>
+            <span ng-bind="item.sunriseTime * 1000 | date : 'HH:mm'"></span>
+          </h4>
+          <h4>
+            <i class="wi wi-direction-down" style="font-size: 20px;vertical-align: middle;"></i>
+            <span ng-bind="item.sunsetTime * 1000 | date : 'HH:mm'"></span>
+          </h4>
+        </div>
+        <div flex="15" flex-xs="20" style="text-align: center">
+          <h4><span ng-bind="item.humidity * 100"></span>%</h4>
+        </div>
+        <div flex="15" flex-xs="20" style="text-align: center">
+          <h4><span ng-bind="item.windSpeed"></span> km/h</h4>
+        </div>
+      </div>
+      <md-divider ng-if="!$last"></md-divider>
+    </md-list-item>
+    <!-- end md-list-item -->
+  </md-list>
+</md-content>

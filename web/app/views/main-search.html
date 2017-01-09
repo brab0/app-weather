@@ -1,0 +1,17 @@
+<!-- Pesquisa principal -->
+
+<md-whiteframe class="md-whiteframe-1dp" layout="row">
+  <md-input-container flex="80" ng-class="selectedPlace ? 'md-input-has-value' : ''">
+    <!-- Autocomplete que usa Google Maps-Places -->
+    <input id="autocomplete" type="text" ng-model="selectedPlace">
+  </md-input-container>
+
+  <md-input-container flex="20">
+    <!-- Dropdown de Unidades de Medida F˚ e C˚ -->
+    <md-select ng-model="$parent.selectedMedida">
+      <md-option ng-repeat="medida in medidas" ng-value="medida">
+        {{medida}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+</md-whiteframe>
